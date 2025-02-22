@@ -1,0 +1,70 @@
+﻿@model Character
+
+@{
+    ViewData["Title"] = "Create a Character";
+}
+
+<button class="c">Character Details</button>
+<div class="container content" style="max-height: 100%">
+    <form class="form-control p-4 d-flex flex-wrap justify-content-center" action="post">
+        <div class="m-2">
+            <label for="name">Name</label><br />
+            <input type="text" name="name" />
+        </div>
+        <div class="m-2">
+            <label for="class">Class</label><br />
+            <input type="text" name="class" />
+        </div>
+        <div class="m-2">
+            <label for="species">Species</label><br />
+            <input type="text" name="species" />
+        </div>
+        <div class="m-2">
+            <label for="background">Background</label><br />
+            <input type="text" name="background" />
+        </div>
+        <div class="m-2">
+            <label for="alignment">Alignment</label><br />
+            <input type="text" name="alignment" />
+        </div>
+        <div class="m-2">
+            <label for="level">Level</label><br />
+            <input type="text" name="level" />
+        </div>
+        <div class="m-2">
+            <label for="experience">Experience</label><br />
+            <input type="number" name="experience" />
+        </div>
+    </form>
+</div>
+
+
+
+
+
+
+<script>
+    var coll = document.getElementsByClassName("c");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    }
+</script>
+
+
+
+
+
+
+
+
+
